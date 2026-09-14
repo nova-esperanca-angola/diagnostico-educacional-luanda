@@ -20,8 +20,8 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 | Fase | Issue | Descrição | Status |
 |---|---|---|---|
 | **WDLC 1** | [#1](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/1) | Catalogação das Séries Temporais de Educação (World Bank & UNESCO) | ✅ **Concluída** |
-| **WDLC 2** | [#2](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/2) | **Arquitetura do Extrator PHP e Especificação do Cache Estático JSON** | ✅ **Concluída** |
-| **WDLC 3** | [#3](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/3) | Design de Gráficos Comparativos de Baixo Consumo de Dados | ⏳ A Iniciar |
+| **WDLC 2** | [#2](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/2) | Arquitetura do Extrator PHP e Especificação do Cache Estático JSON | ✅ **Concluída** |
+| **WDLC 3** | [#3](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/3) | **Design de Gráficos Comparativos de Baixo Consumo de Dados** | ✅ **Concluída** |
 | **WDLC 4** | [#4](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/4) | Construção do Script PHP Extrator e Sanitizador (`fetch-indicators.php`) | ⏳ A Iniciar |
 | **WDLC 5** | [#5](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/5) | Desenvolvimento do Dashboard Analítico e Widget PHP Embutível | ⏳ A Iniciar |
 | **WDLC 6** | [#6](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/6) | Validação de Dados, Checagem de Tolerância a Falhas e Testes de Conexão | ⏳ A Iniciar |
@@ -33,12 +33,13 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 
 - 📖 **[Catálogo Completo de Indicadores](docs/catalogo-indicadores.md)**: Detalhamento dos 6 endpoints multilaterais homologados, histórico de dados, benchmarks da UNESCO e contextualização de Luanda (INE/UNICEF).
 - 📐 **[Arquitetura do Extrator & Cache Estático](docs/arquitetura-extrator-cache.md)**: Diagramas de sequência, fluxo da gravação atômica (`rename()` do SO), desacoplamento do runtime web e política de fail-safe.
+- 🎨 **[Manual do Design System & Gráficos SVG](docs/design-sistema-visual.md)**: Especificação visual, paleta semântica, integração Google Stitch (Projeto `1164742190233504273`) e diretrizes de baixo consumo de dados.
 - 📋 **[Contrato Formal JSON Schema](schemas/angola-education-summary.schema.json)**: Schema formal (Draft-07) do arquivo consolidado de dados.
 - 📦 **[Payload Canônico de Amostra](data/angola-education-summary.sample.json)**: Exemplo canônico estruturado com dados reais auditados.
 
 ---
 
-## 🚀 Scripts de Verificação & Auditoria
+## 🚀 Scripts de Verificação, Auditoria & Protótipo
 
 ### 1. Auditoria dos Endpoints da API do Banco Mundial (WDLC 1):
 ```bash
@@ -48,6 +49,18 @@ php scripts/verify-worldbank-api.php
 ### 2. Validação Estrutural e de Conformidade do Schema (WDLC 2):
 ```bash
 php scripts/validate-schema.php
+```
+
+### 3. Auditoria de Orçamento de Dados 3G (< 20KB) (WDLC 3):
+```bash
+php scripts/verify-asset-budget.php
+```
+
+### 4. Visualização do Protótipo de Componentes no Navegador:
+```bash
+# Iniciar servidor local embutido do PHP
+php -S 127.0.0.1:8000 prototypes/preview-components.php
+# Acesse http://127.0.0.1:8000 no navegador
 ```
 
 ### Exemplo de Saída:
