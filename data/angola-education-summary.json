@@ -1,0 +1,776 @@
+{
+    "metadata": {
+        "schema_version": "1.0.0",
+        "generated_at": "2026-09-14T01:50:00Z",
+        "country_iso3": "AGO",
+        "country_name": "Angola",
+        "pipeline_version": "1.0.0",
+        "data_sources": [
+            {
+                "name": "World Bank Open Data API (World Development Indicators)",
+                "url": "https://api.worldbank.org/v2/country/AGO",
+                "type": "multilateral_api"
+            },
+            {
+                "name": "UNESCO Institute for Statistics (UIS)",
+                "url": "http://data.uis.unesco.org",
+                "type": "multilateral_api"
+            },
+            {
+                "name": "Instituto Nacional de Estatística de Angola (INE)",
+                "url": "https://www.ine.gov.ao",
+                "type": "national_institute"
+            },
+            {
+                "name": "UNICEF Angola - Relatórios de Educação e Orçamento Social",
+                "url": "https://www.unicef.org/angola",
+                "type": "un_agency"
+            }
+        ]
+    },
+    "summary": {
+        "child_population_pct": 44.1,
+        "child_population_year": 2025,
+        "preprimary_gross_enrollment_pct": 39.61,
+        "preprimary_deficit_pct": 60.39,
+        "preprimary_data_year": 2016,
+        "primary_gross_enrollment_pct": 86.74,
+        "primary_enrollment_year": 2023,
+        "out_of_school_primary_count": 2281912,
+        "out_of_school_primary_year": 2023,
+        "education_gdp_pct": 2.51,
+        "education_gdp_year": 2023,
+        "unesco_gdp_benchmark_min_pct": 4,
+        "unesco_gdp_benchmark_max_pct": 6,
+        "adult_literacy_pct": 68.18,
+        "adult_literacy_year": 2023
+    },
+    "indicators": {
+        "SP.POP.0014.TO.ZS": {
+            "id": "SP.POP.0014.TO.ZS",
+            "name_pt": "População de 0 a 14 anos (% da população total)",
+            "name_en": "Population ages 0-14 (% of total population)",
+            "source_agency": "World Bank / UN Population Division",
+            "unit": "percent",
+            "latest_available_year": 2025,
+            "latest_value": 44.1,
+            "benchmark_reference": "Média Mundial: ~25% | África Subsaariana: ~42%",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": 44.1
+                },
+                {
+                    "year": 2024,
+                    "value": 44.35
+                },
+                {
+                    "year": 2023,
+                    "value": 44.57
+                },
+                {
+                    "year": 2022,
+                    "value": 44.76
+                },
+                {
+                    "year": 2021,
+                    "value": 44.91
+                },
+                {
+                    "year": 2020,
+                    "value": 45.02
+                },
+                {
+                    "year": 2019,
+                    "value": 45.11
+                },
+                {
+                    "year": 2018,
+                    "value": 45.2
+                },
+                {
+                    "year": 2017,
+                    "value": 45.25
+                },
+                {
+                    "year": 2016,
+                    "value": 45.28
+                },
+                {
+                    "year": 2015,
+                    "value": 45.27
+                },
+                {
+                    "year": 2014,
+                    "value": 45.23
+                },
+                {
+                    "year": 2013,
+                    "value": 45.18
+                },
+                {
+                    "year": 2012,
+                    "value": 45.16
+                },
+                {
+                    "year": 2011,
+                    "value": 45.15
+                },
+                {
+                    "year": 2010,
+                    "value": 45.14
+                },
+                {
+                    "year": 2009,
+                    "value": 45.12
+                },
+                {
+                    "year": 2008,
+                    "value": 45.11
+                },
+                {
+                    "year": 2007,
+                    "value": 45.11
+                },
+                {
+                    "year": 2006,
+                    "value": 45.14
+                },
+                {
+                    "year": 2005,
+                    "value": 45.19
+                },
+                {
+                    "year": 2004,
+                    "value": 45.25
+                },
+                {
+                    "year": 2003,
+                    "value": 45.34
+                },
+                {
+                    "year": 2002,
+                    "value": 45.43
+                },
+                {
+                    "year": 2001,
+                    "value": 45.53
+                },
+                {
+                    "year": 2000,
+                    "value": 45.62
+                }
+            ]
+        },
+        "SE.PRE.ENRR": {
+            "id": "SE.PRE.ENRR",
+            "name_pt": "Taxa bruta de matrícula na educação pré-primária",
+            "name_en": "School enrollment, preprimary (% gross)",
+            "source_agency": "UNESCO UIS / World Bank WDI",
+            "unit": "percent",
+            "latest_available_year": 2016,
+            "latest_value": 39.61,
+            "benchmark_reference": "Meta ODS 4: 100% universal | Déficit atual > 60%",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": null
+                },
+                {
+                    "year": 2024,
+                    "value": null
+                },
+                {
+                    "year": 2023,
+                    "value": null
+                },
+                {
+                    "year": 2022,
+                    "value": null
+                },
+                {
+                    "year": 2021,
+                    "value": null
+                },
+                {
+                    "year": 2020,
+                    "value": null
+                },
+                {
+                    "year": 2019,
+                    "value": null
+                },
+                {
+                    "year": 2018,
+                    "value": null
+                },
+                {
+                    "year": 2017,
+                    "value": null
+                },
+                {
+                    "year": 2016,
+                    "value": 39.61
+                },
+                {
+                    "year": 2015,
+                    "value": null
+                },
+                {
+                    "year": 2014,
+                    "value": null
+                },
+                {
+                    "year": 2013,
+                    "value": null
+                },
+                {
+                    "year": 2012,
+                    "value": null
+                },
+                {
+                    "year": 2011,
+                    "value": 73.33
+                },
+                {
+                    "year": 2010,
+                    "value": 85.84
+                },
+                {
+                    "year": 2009,
+                    "value": 92.73
+                },
+                {
+                    "year": 2008,
+                    "value": 99.42
+                },
+                {
+                    "year": 2007,
+                    "value": 135.92
+                },
+                {
+                    "year": 2006,
+                    "value": null
+                },
+                {
+                    "year": 2005,
+                    "value": null
+                },
+                {
+                    "year": 2004,
+                    "value": null
+                },
+                {
+                    "year": 2003,
+                    "value": null
+                },
+                {
+                    "year": 2002,
+                    "value": null
+                },
+                {
+                    "year": 2001,
+                    "value": null
+                },
+                {
+                    "year": 2000,
+                    "value": null
+                }
+            ]
+        },
+        "SE.PRM.ENRR": {
+            "id": "SE.PRM.ENRR",
+            "name_pt": "Taxa bruta de matrícula no ensino primário",
+            "name_en": "School enrollment, primary (% gross)",
+            "source_agency": "UNESCO UIS / World Bank WDI",
+            "unit": "percent",
+            "latest_available_year": 2023,
+            "latest_value": 86.74,
+            "benchmark_reference": "Universalização: 100% (Queda vs. 120% em 2015 por distorção idade-série)",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": null
+                },
+                {
+                    "year": 2024,
+                    "value": null
+                },
+                {
+                    "year": 2023,
+                    "value": 86.74
+                },
+                {
+                    "year": 2022,
+                    "value": null
+                },
+                {
+                    "year": 2021,
+                    "value": 89.23
+                },
+                {
+                    "year": 2020,
+                    "value": null
+                },
+                {
+                    "year": 2019,
+                    "value": null
+                },
+                {
+                    "year": 2018,
+                    "value": null
+                },
+                {
+                    "year": 2017,
+                    "value": null
+                },
+                {
+                    "year": 2016,
+                    "value": null
+                },
+                {
+                    "year": 2015,
+                    "value": 120.58
+                },
+                {
+                    "year": 2014,
+                    "value": null
+                },
+                {
+                    "year": 2013,
+                    "value": null
+                },
+                {
+                    "year": 2012,
+                    "value": null
+                },
+                {
+                    "year": 2011,
+                    "value": 128.39
+                },
+                {
+                    "year": 2010,
+                    "value": 113.87
+                },
+                {
+                    "year": 2009,
+                    "value": 112.28
+                },
+                {
+                    "year": 2008,
+                    "value": 113.29
+                },
+                {
+                    "year": 2007,
+                    "value": 106.34
+                },
+                {
+                    "year": 2006,
+                    "value": null
+                },
+                {
+                    "year": 2005,
+                    "value": null
+                },
+                {
+                    "year": 2004,
+                    "value": null
+                },
+                {
+                    "year": 2003,
+                    "value": null
+                },
+                {
+                    "year": 2002,
+                    "value": null
+                },
+                {
+                    "year": 2001,
+                    "value": null
+                },
+                {
+                    "year": 2000,
+                    "value": null
+                }
+            ]
+        },
+        "SE.PRM.UNER": {
+            "id": "SE.PRM.UNER",
+            "name_pt": "Crianças fora da escola em idade primária",
+            "name_en": "Children out of school, primary",
+            "source_agency": "UNESCO UIS / World Bank WDI",
+            "unit": "count",
+            "latest_available_year": 2023,
+            "latest_value": 2281912,
+            "benchmark_reference": "Meta ODS 4: 0 crianças fora da escola",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": null
+                },
+                {
+                    "year": 2024,
+                    "value": null
+                },
+                {
+                    "year": 2023,
+                    "value": 2281912
+                },
+                {
+                    "year": 2022,
+                    "value": null
+                },
+                {
+                    "year": 2021,
+                    "value": null
+                },
+                {
+                    "year": 2020,
+                    "value": null
+                },
+                {
+                    "year": 2019,
+                    "value": null
+                },
+                {
+                    "year": 2018,
+                    "value": null
+                },
+                {
+                    "year": 2017,
+                    "value": null
+                },
+                {
+                    "year": 2016,
+                    "value": null
+                },
+                {
+                    "year": 2015,
+                    "value": null
+                },
+                {
+                    "year": 2014,
+                    "value": null
+                },
+                {
+                    "year": 2013,
+                    "value": null
+                },
+                {
+                    "year": 2012,
+                    "value": null
+                },
+                {
+                    "year": 2011,
+                    "value": 483740
+                },
+                {
+                    "year": 2010,
+                    "value": 443738
+                },
+                {
+                    "year": 2009,
+                    "value": 446219
+                },
+                {
+                    "year": 2008,
+                    "value": 388327
+                },
+                {
+                    "year": 2007,
+                    "value": null
+                },
+                {
+                    "year": 2006,
+                    "value": null
+                },
+                {
+                    "year": 2005,
+                    "value": null
+                },
+                {
+                    "year": 2004,
+                    "value": null
+                },
+                {
+                    "year": 2003,
+                    "value": null
+                },
+                {
+                    "year": 2002,
+                    "value": null
+                },
+                {
+                    "year": 2001,
+                    "value": null
+                },
+                {
+                    "year": 2000,
+                    "value": null
+                }
+            ]
+        },
+        "SE.XPD.TOTL.GD.ZS": {
+            "id": "SE.XPD.TOTL.GD.ZS",
+            "name_pt": "Gasto público do governo em educação (% do PIB)",
+            "name_en": "Government expenditure on education, total (% of GDP)",
+            "source_agency": "UNESCO UIS / World Bank WDI",
+            "unit": "percent",
+            "latest_available_year": 2023,
+            "latest_value": 2.51,
+            "benchmark_reference": "Benchmark Internacional UNESCO (Declaração de Incheon): 4,0% a 6,0% do PIB",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": null
+                },
+                {
+                    "year": 2024,
+                    "value": null
+                },
+                {
+                    "year": 2023,
+                    "value": 2.51
+                },
+                {
+                    "year": 2022,
+                    "value": 2.39
+                },
+                {
+                    "year": 2021,
+                    "value": 2.3
+                },
+                {
+                    "year": 2020,
+                    "value": 2.67
+                },
+                {
+                    "year": 2019,
+                    "value": 2.07
+                },
+                {
+                    "year": 2018,
+                    "value": 2.18
+                },
+                {
+                    "year": 2017,
+                    "value": 2.47
+                },
+                {
+                    "year": 2016,
+                    "value": 2.75
+                },
+                {
+                    "year": 2015,
+                    "value": 3.49
+                },
+                {
+                    "year": 2014,
+                    "value": null
+                },
+                {
+                    "year": 2013,
+                    "value": 4.44
+                },
+                {
+                    "year": 2012,
+                    "value": 3.08
+                },
+                {
+                    "year": 2011,
+                    "value": null
+                },
+                {
+                    "year": 2010,
+                    "value": 3.42
+                },
+                {
+                    "year": 2009,
+                    "value": null
+                },
+                {
+                    "year": 2008,
+                    "value": null
+                },
+                {
+                    "year": 2007,
+                    "value": null
+                },
+                {
+                    "year": 2006,
+                    "value": 2.28
+                },
+                {
+                    "year": 2005,
+                    "value": 2.12
+                },
+                {
+                    "year": 2004,
+                    "value": null
+                },
+                {
+                    "year": 2003,
+                    "value": null
+                },
+                {
+                    "year": 2002,
+                    "value": null
+                },
+                {
+                    "year": 2001,
+                    "value": null
+                },
+                {
+                    "year": 2000,
+                    "value": 2.61
+                }
+            ]
+        },
+        "SE.ADT.LITR.ZS": {
+            "id": "SE.ADT.LITR.ZS",
+            "name_pt": "Taxa de alfabetização de adultos (% 15+ anos)",
+            "name_en": "Literacy rate, adult total (% of people ages 15 and above)",
+            "source_agency": "UNESCO UIS / World Bank WDI",
+            "unit": "percent",
+            "latest_available_year": 2023,
+            "latest_value": 68.18,
+            "benchmark_reference": "Média Mundial: ~87%",
+            "historical_series": [
+                {
+                    "year": 2025,
+                    "value": null
+                },
+                {
+                    "year": 2024,
+                    "value": null
+                },
+                {
+                    "year": 2023,
+                    "value": 68.18
+                },
+                {
+                    "year": 2022,
+                    "value": null
+                },
+                {
+                    "year": 2021,
+                    "value": null
+                },
+                {
+                    "year": 2020,
+                    "value": null
+                },
+                {
+                    "year": 2019,
+                    "value": null
+                },
+                {
+                    "year": 2018,
+                    "value": null
+                },
+                {
+                    "year": 2017,
+                    "value": null
+                },
+                {
+                    "year": 2016,
+                    "value": null
+                },
+                {
+                    "year": 2015,
+                    "value": 66.24
+                },
+                {
+                    "year": 2014,
+                    "value": 66.03
+                },
+                {
+                    "year": 2013,
+                    "value": null
+                },
+                {
+                    "year": 2012,
+                    "value": null
+                },
+                {
+                    "year": 2011,
+                    "value": null
+                },
+                {
+                    "year": 2010,
+                    "value": null
+                },
+                {
+                    "year": 2009,
+                    "value": null
+                },
+                {
+                    "year": 2008,
+                    "value": null
+                },
+                {
+                    "year": 2007,
+                    "value": null
+                },
+                {
+                    "year": 2006,
+                    "value": null
+                },
+                {
+                    "year": 2005,
+                    "value": null
+                },
+                {
+                    "year": 2004,
+                    "value": null
+                },
+                {
+                    "year": 2003,
+                    "value": null
+                },
+                {
+                    "year": 2002,
+                    "value": null
+                },
+                {
+                    "year": 2001,
+                    "value": 67.41
+                },
+                {
+                    "year": 2000,
+                    "value": null
+                }
+            ]
+        }
+    },
+    "regional_context": {
+        "province": "Luanda",
+        "capital_city": "Luanda",
+        "estimated_population": "8.5 a 9.5 milhões",
+        "population_share_national_pct": 27,
+        "fertility_rate": 5.4,
+        "contextual_notes": [
+            "Concentração de mais de 27% de toda a população de Angola na Província de Luanda.",
+            "Crescimento populacional anual superior a 3,5% impulsionado pela taxa de fertilidade e migração campo-cidade.",
+            "Mais de 50 a 60 alunos por sala de aula nas escolas públicas da capital segundo dados do MED e INE.",
+            "Educação pré-escolar pública com dotação orçamental inferior a 2% do orçamento setorial de educação segundo a UNICEF Angola."
+        ],
+        "local_challenges": [
+            {
+                "topic": "Déficit de Vagas na Educação Pré-Escolar",
+                "description": "Menos de 2% do orçamento público educacional é destinado à educação pré-escolar. O Estado praticamente não provê creches e jardins de infância públicos nas periferias de Luanda.",
+                "source": "UNICEF Angola - Análise do Orçamento da Educação"
+            },
+            {
+                "topic": "Superlotação e Sistema de Turnos",
+                "description": "Salas de aula públicas operam com mais de 50 alunos e até três turnos diários, reduzindo a permanência escolar para apenas 3 a 3,5 horas por dia.",
+                "source": "INE Angola - Anuário de Estatísticas Sociais"
+            },
+            {
+                "topic": "Vulnerabilidade Multigeracional",
+                "description": "Taxa de analfabetismo adulto acima de 31% reforça a necessidade de apoio comunitário e reforço escolar precoce para romper o ciclo de pobreza familiar.",
+                "source": "INE Angola / Banco Mundial"
+            }
+        ]
+    }
+}
