@@ -5,14 +5,15 @@ declare(strict_types=1);
 /**
  * Componente: Gráfico SVG de Cobertura da Primeira Infância e Déficit Pré-Escolar
  */
-function renderChartPreprimaryDeficit(float $enrolledPct = 39.61, float $deficitPct = 60.39): string
-{
-    $enrolledWidth = round($enrolledPct, 1);
-    $deficitWidth = round($deficitPct, 1);
-    $enrolledFormatted = number_format($enrolledPct, 1, ',', '.') . '%';
-    $deficitFormatted = number_format($deficitPct, 1, ',', '.') . '%';
+if (!function_exists('renderChartPreprimaryDeficit')) {
+    function renderChartPreprimaryDeficit(float $enrolledPct = 39.61, float $deficitPct = 60.39): string
+    {
+        $enrolledWidth = round($enrolledPct, 1);
+        $deficitWidth = round($deficitPct, 1);
+        $enrolledFormatted = number_format($enrolledPct, 1, ',', '.') . '%';
+        $deficitFormatted = number_format($deficitPct, 1, ',', '.') . '%';
 
-    return <<<HTML
+        return <<<HTML
 <div class="chart-box">
   <div class="chart-header">
     <div>
@@ -41,4 +42,5 @@ function renderChartPreprimaryDeficit(float $enrolledPct = 39.61, float $deficit
   </div>
 </div>
 HTML;
+    }
 }

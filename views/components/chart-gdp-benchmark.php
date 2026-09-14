@@ -5,19 +5,20 @@ declare(strict_types=1);
 /**
  * Componente: Gráfico Comparativo SVG - Investimento Público (% do PIB) vs. Benchmark UNESCO
  */
-function renderChartGdpBenchmark(float $angolaGdpPercent = 2.51, float $minBenchmark = 4.0, float $maxBenchmark = 6.0): string
-{
-    $scaleMax = 7.0;
-    $angolaWidth = round(($angolaGdpPercent / $scaleMax) * 100, 2);
-    $minPos = round(($minBenchmark / $scaleMax) * 100, 2);
-    $maxPos = round(($maxBenchmark / $scaleMax) * 100, 2);
-    $benchZoneWidth = round($maxPos - $minPos, 2);
+if (!function_exists('renderChartGdpBenchmark')) {
+    function renderChartGdpBenchmark(float $angolaGdpPercent = 2.51, float $minBenchmark = 4.0, float $maxBenchmark = 6.0): string
+    {
+        $scaleMax = 7.0;
+        $angolaWidth = round(($angolaGdpPercent / $scaleMax) * 100, 2);
+        $minPos = round(($minBenchmark / $scaleMax) * 100, 2);
+        $maxPos = round(($maxBenchmark / $scaleMax) * 100, 2);
+        $benchZoneWidth = round($maxPos - $minPos, 2);
 
-    $angolaFormatted = number_format($angolaGdpPercent, 2, ',', '.') . '%';
-    $minFormatted = number_format($minBenchmark, 1, ',', '.') . '%';
-    $maxFormatted = number_format($maxBenchmark, 1, ',', '.') . '%';
+        $angolaFormatted = number_format($angolaGdpPercent, 2, ',', '.') . '%';
+        $minFormatted = number_format($minBenchmark, 1, ',', '.') . '%';
+        $maxFormatted = number_format($maxBenchmark, 1, ',', '.') . '%';
 
-    return <<<HTML
+        return <<<HTML
 <div class="chart-box">
   <div class="chart-header">
     <div>
@@ -43,8 +44,9 @@ function renderChartGdpBenchmark(float $angolaGdpPercent = 2.51, float $minBench
   </div>
 
   <div class="insight-box insight-amber">
-    <strong>Diagnóstico:</strong> Com ~2,51% do PIB, Angola aplica metade do piso recomendado pela UNESCO para universalização do ensino.
+    <strong>Diagnóstico:</strong> Com ~{$angolaFormatted} do PIB, Angola aplica cerca de metade do piso recomendado pela UNESCO para universalização do ensino.
   </div>
 </div>
 HTML;
+    }
 }
