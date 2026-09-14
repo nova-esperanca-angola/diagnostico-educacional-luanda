@@ -1,0 +1,17 @@
+# Ambientes e Segredos
+.env
+.env.local
+.env.*.local
+
+# Logs e Arquivos Temporários
+*.log
+*.tmp
+*.tmp.*
+
+# IDEs e Editores
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

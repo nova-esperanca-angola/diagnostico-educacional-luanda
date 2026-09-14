@@ -1,0 +1,65 @@
+# ----------------------------------------------------------------------
+# Observatório do Diagnóstico Educacional de Angola & Luanda
+# Configurações de Segurança e Otimização para Servidor Apache / LiteSpeed (Hostinger)
+# WDLC Fase 7 (Deploy & Hardening)
+# ----------------------------------------------------------------------
+
+# 1. SEGURANÇA BÁSICA & PROTEÇÃO DE DIRETÓRIOS
+# Desativa listagem e navegação por diretórios em todo o portal
+Options -Indexes
+
+# Bloqueia acesso a arquivos ocultos (.env, .git, .htaccess, etc.)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Bloqueia acesso a arquivos de configuração sensíveis e schemas
+<FilesMatch "\.(env|json\.schema|log|sql|md|bak|swp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Permite acesso exclusivamente ao cache consolidado público de dados
+<Files "angola-education-summary.json">
+    Order allow,deny
+    Allow from all
+</Files>
+<Files "angola-education-summary.sample.json">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# 2. DEFINIÇÃO DE CHARSET PADRÃO
+AddDefaultCharset UTF-8
+
+# 3. CABEÇALHOS DE SEGURANÇA HTTP
+<IfModule mod_headers.c>
+    # Previne MIME-sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Protege contra ataques de XSS em navegadores antigos
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Permite embutir o widget em portais e iframes externos controlados
+    <FilesMatch "widget-impacto\.php$">
+        Header unset X-Frame-Options
+        Header set Content-Security-Policy "frame-ancestors *"
+    </FilesMatch>
+
+    # 4. POLÍTICAS DE CACHE HTTP OTIMIZADAS PARA 3G
+    # Cache do JSON consolidado de indicadores: 30 minutos (1800s)
+    <FilesMatch "angola-education-summary.*\.json$">
+        Header set Cache-Control "max-age=1800, public, must-revalidate"
+    </FilesMatch>
+
+    # Cache de imagens, vetores SVG e fontes estáticas: 30 dias (2592000s)
+    <FilesMatch "\.(svg|png|jpg|jpeg|webp|ico|woff|woff2)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
+# 5. COMPRESSÃO GZIP / DEFLATE (ECONOMIA DE BANDA 3G)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>

@@ -25,8 +25,8 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 | **WDLC 3** | [#3](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/3) | Design de Gráficos Comparativos de Baixo Consumo de Dados (Google Stitch) | ✅ **Concluída** |
 | **WDLC 4** | [#4](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/4) | Construção do Script PHP Extrator e Sanitizador (`fetch-indicators.php`) | ✅ **Concluída** |
 | **WDLC 5** | [#5](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/5) | Desenvolvimento do Dashboard Analítico e Widget PHP Embutível | ✅ **Concluída** |
-| **WDLC 6** | [#6](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/6) | **Validação de Dados, Checagem de Tolerância a Falhas e Testes de Conexão** | ✅ **Concluída** |
-| **WDLC 7** | [#7](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/7) | Configuração de Cron Job no hPanel da Hostinger para Atualização Periódica | ⏳ A Iniciar |
+| **WDLC 6** | [#6](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/6) | Validação de Dados, Checagem de Tolerância a Falhas e Testes de Conexão | ✅ **Concluída** |
+| **WDLC 7** | [#7](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/7) | Configuração de Cron Job no hPanel da Hostinger para Atualização Periódica | ✅ **Concluída** |
 
 ---
 
@@ -43,6 +43,7 @@ O observatório e o widget foram concebidos e integrados no Google Stitch (Proje
 - 📖 **[Catálogo Completo de Indicadores](docs/catalogo-indicadores.md)**: Detalhamento dos 6 endpoints multilaterais homologados, histórico de dados, benchmarks da UNESCO e contextualização de Luanda (INE/UNICEF).
 - 📐 **[Arquitetura do Extrator & Cache Estático](docs/arquitetura-extrator-cache.md)**: Diagramas de sequência, fluxo da gravação atômica (`rename()` do SO), desacoplamento do runtime web e política de fail-safe.
 - 🎨 **[Manual do Design System & Gráficos SVG](docs/design-sistema-visual.md)**: Especificação visual, paleta semântica, integração Google Stitch e diretrizes de baixo consumo de dados.
+- 🚀 **[Manual de Deploy & Cron no hPanel Hostinger](docs/deploy-hostinger-cron.md)**: Passo a passo de configuração da Cron Job (`0 3 1 * *`), mapeamento de diretórios, autenticação por token e hardening web.
 - 📋 **[Contrato Formal JSON Schema](schemas/angola-education-summary.schema.json)**: Schema formal (Draft-07) do arquivo consolidado de dados.
 - 📦 **[Cache Consolidado em Produção](data/angola-education-summary.json)**: Dados atualizados e sanitizados em tempo real pelo pipeline cURL.
 
@@ -82,6 +83,11 @@ include_once __DIR__ . '/views/widget-impacto.php';
 ---
 
 ## 🧪 Bateria de Testes Automatizados
+
+### Prontidão para Deploy & Cron (WDLC 7):
+```bash
+php scripts/verify-deploy-readiness.php
+```
 
 ### Tolerância a Falhas e QA (WDLC 6):
 ```bash

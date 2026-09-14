@@ -18,6 +18,20 @@ ini_set('display_errors', '1');
 
 $isCli = (php_sapi_name() === 'cli');
 
+// WDLC 7: Restrição de Segurança para Execução Web/HTTP
+if (!$isCli) {
+    $cronToken = getenv('CRON_SECRET_TOKEN') ?: 'cne_angola_live_cron_2026';
+    $providedToken = $_GET['token'] ?? $_SERVER['HTTP_X_CRON_TOKEN'] ?? '';
+
+    if (!is_string($providedToken) || !hash_equals($cronToken, $providedToken)) {
+        http_response_code(403);
+        header('Content-Type: text/plain; charset=UTF-8');
+        echo "403 Forbidden: Acesso restrito a execução CLI (Cron Job) ou requisições autorizadas com chave de segurança válida (?token=...).\n";
+        exit(1);
+    }
+    header('Content-Type: text/plain; charset=UTF-8');
+}
+
 function logMessage(string $msg, bool $isError = false): void
 {
     global $isCli;
