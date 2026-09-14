@@ -24,8 +24,8 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 | **WDLC 2** | [#2](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/2) | Arquitetura do Extrator PHP e Especificação do Cache Estático JSON | ✅ **Concluída** |
 | **WDLC 3** | [#3](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/3) | Design de Gráficos Comparativos de Baixo Consumo de Dados (Google Stitch) | ✅ **Concluída** |
 | **WDLC 4** | [#4](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/4) | Construção do Script PHP Extrator e Sanitizador (`fetch-indicators.php`) | ✅ **Concluída** |
-| **WDLC 5** | [#5](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/5) | **Desenvolvimento do Dashboard Analítico e Widget PHP Embutível** | ✅ **Concluída** |
-| **WDLC 6** | [#6](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/6) | Validação de Dados, Checagem de Tolerância a Falhas e Testes de Conexão | ⏳ A Iniciar |
+| **WDLC 5** | [#5](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/5) | Desenvolvimento do Dashboard Analítico e Widget PHP Embutível | ✅ **Concluída** |
+| **WDLC 6** | [#6](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/6) | **Validação de Dados, Checagem de Tolerância a Falhas e Testes de Conexão** | ✅ **Concluída** |
 | **WDLC 7** | [#7](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/7) | Configuração de Cron Job no hPanel da Hostinger para Atualização Periódica | ⏳ A Iniciar |
 
 ---
@@ -82,6 +82,11 @@ include_once __DIR__ . '/views/widget-impacto.php';
 ---
 
 ## 🧪 Bateria de Testes Automatizados
+
+### Tolerância a Falhas e QA (WDLC 6):
+```bash
+php scripts/test-fault-tolerance.php
+```
 
 ### Auditoria do Dashboard e Widget (WDLC 5):
 ```bash

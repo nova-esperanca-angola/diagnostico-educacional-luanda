@@ -115,8 +115,10 @@ $dateRange = '2000:2025';
 $extractedIndicators = [];
 
 foreach ($indicatorsConfig as $indId => $meta) {
+    $apiBaseUrl = getenv('WORLDBANK_API_BASE_URL') ?: 'https://api.worldbank.org/v2';
     $apiUrl = sprintf(
-        'https://api.worldbank.org/v2/country/%s/indicator/%s?format=json&date=%s&per_page=50',
+        '%s/country/%s/indicator/%s?format=json&date=%s&per_page=50',
+        rtrim($apiBaseUrl, '/'),
         $country,
         $indId,
         $dateRange
