@@ -19,8 +19,8 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 
 | Fase | Issue | Descrição | Status |
 |---|---|---|---|
-| **WDLC 1** | [#1](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/1) | **Catalogação das Séries Temporais de Educação (World Bank & UNESCO)** | ✅ **Concluída** |
-| **WDLC 2** | [#2](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/2) | Arquitetura do Extrator PHP e Especificação do Cache Estático JSON | ⏳ A Iniciar |
+| **WDLC 1** | [#1](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/1) | Catalogação das Séries Temporais de Educação (World Bank & UNESCO) | ✅ **Concluída** |
+| **WDLC 2** | [#2](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/2) | **Arquitetura do Extrator PHP e Especificação do Cache Estático JSON** | ✅ **Concluída** |
 | **WDLC 3** | [#3](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/3) | Design de Gráficos Comparativos de Baixo Consumo de Dados | ⏳ A Iniciar |
 | **WDLC 4** | [#4](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/4) | Construção do Script PHP Extrator e Sanitizador (`fetch-indicators.php`) | ⏳ A Iniciar |
 | **WDLC 5** | [#5](https://github.com/nova-esperanca-angola/diagnostico-educacional-luanda/issues/5) | Desenvolvimento do Dashboard Analítico e Widget PHP Embutível | ⏳ A Iniciar |
@@ -29,19 +29,25 @@ Este projeto provê uma base técnica auditável com dados oficiais do **Banco M
 
 ---
 
-## 📑 Documentação Técnica
+## 📑 Documentação Técnica & Especificações
 
 - 📖 **[Catálogo Completo de Indicadores](docs/catalogo-indicadores.md)**: Detalhamento dos 6 endpoints multilaterais homologados, histórico de dados, benchmarks da UNESCO e contextualização de Luanda (INE/UNICEF).
+- 📐 **[Arquitetura do Extrator & Cache Estático](docs/arquitetura-extrator-cache.md)**: Diagramas de sequência, fluxo da gravação atômica (`rename()` do SO), desacoplamento do runtime web e política de fail-safe.
+- 📋 **[Contrato Formal JSON Schema](schemas/angola-education-summary.schema.json)**: Schema formal (Draft-07) do arquivo consolidado de dados.
+- 📦 **[Payload Canônico de Amostra](data/angola-education-summary.sample.json)**: Exemplo canônico estruturado com dados reais auditados.
 
 ---
 
-## 🚀 Como Executar o Script de Auditoria da API
+## 🚀 Scripts de Verificação & Auditoria
 
-Para verificar a integridade e disponibilidade dos endpoints do Banco Mundial:
-
+### 1. Auditoria dos Endpoints da API do Banco Mundial (WDLC 1):
 ```bash
-# Executar a verificação via terminal PHP CLI
 php scripts/verify-worldbank-api.php
+```
+
+### 2. Validação Estrutural e de Conformidade do Schema (WDLC 2):
+```bash
+php scripts/validate-schema.php
 ```
 
 ### Exemplo de Saída:

@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://novaesperanca.ao/schemas/angola-education-summary.schema.json",
+  "title": "AngolaEducationSummary",
+  "description": "Contrato formal de dados do cache consolidado do Observatório de Diagnóstico Educacional de Angola e Luanda.",
+  "type": "object",
+  "required": ["metadata", "summary", "indicators", "regional_context"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "generated_at",
+        "country_iso3",
+        "country_name",
+        "pipeline_version",
+        "data_sources"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "country_iso3": {
+          "type": "string",
+          "enum": ["AGO"]
+        },
+        "country_name": {
+          "type": "string",
+          "enum": ["Angola"]
+        },
+        "pipeline_version": {
+          "type": "string"
+        },
+        "data_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "url", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "type": { "type": "string", "enum": ["multilateral_api", "national_institute", "un_agency"] }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "child_population_pct",
+        "child_population_year",
+        "preprimary_gross_enrollment_pct",
+        "preprimary_deficit_pct",
+        "preprimary_data_year",
+        "primary_gross_enrollment_pct",
+        "primary_enrollment_year",
+        "out_of_school_primary_count",
+        "out_of_school_primary_year",
+        "education_gdp_pct",
+        "education_gdp_year",
+        "unesco_gdp_benchmark_min_pct",
+        "unesco_gdp_benchmark_max_pct",
+        "adult_literacy_pct",
+        "adult_literacy_year"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "child_population_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "child_population_year": { "type": "integer", "minimum": 2000 },
+        "preprimary_gross_enrollment_pct": { "type": "number", "minimum": 0, "maximum": 150 },
+        "preprimary_deficit_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "preprimary_data_year": { "type": "integer", "minimum": 2000 },
+        "primary_gross_enrollment_pct": { "type": "number", "minimum": 0, "maximum": 200 },
+        "primary_enrollment_year": { "type": "integer", "minimum": 2000 },
+        "out_of_school_primary_count": { "type": "integer", "minimum": 0 },
+        "out_of_school_primary_year": { "type": "integer", "minimum": 2000 },
+        "education_gdp_pct": { "type": "number", "minimum": 0, "maximum": 50 },
+        "education_gdp_year": { "type": "integer", "minimum": 2000 },
+        "unesco_gdp_benchmark_min_pct": { "type": "number", "enum": [4.0] },
+        "unesco_gdp_benchmark_max_pct": { "type": "number", "enum": [6.0] },
+        "adult_literacy_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "adult_literacy_year": { "type": "integer", "minimum": 2000 }
+      }
+    },
+    "indicators": {
+      "type": "object",
+      "required": [
+        "SP.POP.0014.TO.ZS",
+        "SE.PRE.ENRR",
+        "SE.PRM.ENRR",
+        "SE.PRM.UNER",
+        "SE.XPD.TOTL.GD.ZS",
+        "SE.ADT.LITR.ZS"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "SP.POP.0014.TO.ZS": { "$ref": "#/definitions/indicatorRecord" },
+        "SE.PRE.ENRR": { "$ref": "#/definitions/indicatorRecord" },
+        "SE.PRM.ENRR": { "$ref": "#/definitions/indicatorRecord" },
+        "SE.PRM.UNER": { "$ref": "#/definitions/indicatorRecord" },
+        "SE.XPD.TOTL.GD.ZS": { "$ref": "#/definitions/indicatorRecord" },
+        "SE.ADT.LITR.ZS": { "$ref": "#/definitions/indicatorRecord" }
+      }
+    },
+    "regional_context": {
+      "type": "object",
+      "required": [
+        "province",
+        "capital_city",
+        "estimated_population",
+        "population_share_national_pct",
+        "fertility_rate",
+        "contextual_notes",
+        "local_challenges"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "province": { "type": "string", "enum": ["Luanda"] },
+        "capital_city": { "type": "string", "enum": ["Luanda"] },
+        "estimated_population": { "type": "string" },
+        "population_share_national_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "fertility_rate": { "type": "number", "minimum": 0 },
+        "contextual_notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "local_challenges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["topic", "description", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "topic": { "type": "string" },
+              "description": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "indicatorRecord": {
+      "type": "object",
+      "required": [
+        "id",
+        "name_pt",
+        "name_en",
+        "source_agency",
+        "unit",
+        "latest_available_year",
+        "latest_value",
+        "benchmark_reference",
+        "historical_series"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name_pt": { "type": "string" },
+        "name_en": { "type": "string" },
+        "source_agency": { "type": "string" },
+        "unit": { "type": "string" },
+        "latest_available_year": { "type": "integer" },
+        "latest_value": { "type": "number" },
+        "benchmark_reference": { "type": ["string", "null"] },
+        "historical_series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["year", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "year": { "type": "integer" },
+              "value": { "type": ["number", "null"] }
+            }
+          }
+        }
+      }
+    }
+  }
+}
